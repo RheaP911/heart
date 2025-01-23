@@ -1,25 +1,27 @@
+/* Playwrite IN */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    background: url(https://open.spotify.com/track/7HAimn6ZVLSXNSrrCYKcNu?si=39614cf9848b42fe);
-}
-
-
 body {
     height: 100vh;
     width: 100vw;
-    background: #f3e2e9 !important;
+    background: #27070d;
+    padding-top: 50px;
+    /* background: linear-gradient(45deg, rgba(46, 41, 42, 1), rgba(46, 41, 42, 0.8)); */
     overflow: hidden;
 }
 
 span {
     position: absolute;
     pointer-events: none;
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.5));
+    filter: drop-shadow(0 0 15px rgba(80, 73, 73, 0.5));
     animation: fadeInOut 1s linear infinite;
 }
 
@@ -39,7 +41,7 @@ span::before {
     height: 50px;
     background: url(heart.png);
     background-size: cover;
-    animation: moveShape 1s linear infinite;
+    animation: moveShape 10s linear infinite;
 }
 
 @keyframes moveShape {
@@ -51,16 +53,129 @@ span::before {
     }
 }
 
+/* ----------- GREETINGS ----------------- */
+
+p {
+    text-align: center;
+    color: #cea6a6;
+    font-size: 20px;
+    font-family: 'Poppins', serif;
+}
+
+h1 {
+    color: #fefefe;
+    font-family: 'Playwrite IN', serif;
+    font-size: 24px;
+    text-align: center;
+    background: linear-gradient(90deg, #fefcfb, #f9e4c8, #f0d2b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ----------------- CONTAINER -------------- */
+
+.card {
+    /* background: #fefefe; */
+    border: 6px solid #dcdcdc;
+    border-top-width: 12px;
+    border-bottom-width: 25px;
+    position: absolute;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+                0 4px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.one {
+    width: 100px;
+    height: 150px;
+    top: 200%;
+    left: 150%;
+    background: url(photo-1.jpg);
+    background-size: cover;
+    z-index: 2;
+    animation: movePhoto1 2.5s linear forwards;
+}
+
+
+
+.two {
+    width: 180px;
+    height: 150px;
+    top: 150%;
+    left: 10%;
+    background: url(photo-2.jpg);
+    background-size: cover;
+    z-index: 1;
+    animation: movePhoto2 2s linear forwards;
+}
+
+.three {
+    width: 150px;
+    height: 130px;
+    top: 20%;
+    left: -105%;
+    background: url(photo-3.jpg);
+    background-size: cover;
+    animation: movePhoto3 1s linear forwards;
+}
+
+.four {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 12%;
+    background: url(photo-4.jpg);
+    background-size: cover;
+    animation: movePhoto4 1.5s linear forwards;
+}
+
+
+@keyframes movePhoto1 {
+    0% {
+        top: 200%;
+        left: 150%;
+    }
+    100% {
+        top: 45%;
+        left: 58%;
+    }
+}
+
+@keyframes movePhoto2 {
+    0% {
+        top: 120%;
+        left: -105%;
+    }
+    100% {
+        top: 30%;
+        left: 40%;
+    }
+}
+
+
+@keyframes movePhoto3 {
+    0% {
+        top: 20%;
+        left: -105%;
+    }
+    100% {
+        top: 25%;
+        left: 12%;
+    }
+}
+
+
+@keyframes movePhoto4 {
+    0% {
+        top: 20%;
+        left: -105%;
+    }
+    100% {
+        top: 45%;
+        left: 20%;
+    }
+}
+
 /* -------------- VINLY --------------- */
-
-/* .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-
-    border: 1px solid yellow;
-} */
 
 .vinyl {
     position: absolute;
@@ -71,8 +186,8 @@ span::before {
     border-radius: 50%;
     background: #111;
     background-image: repeating-radial-gradient(#181312, #181312 10%, #2c2424 15%);
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
-                0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.52),
+                0 4px 8px 0 rgba(0, 0, 0, 0.41);
     animation: rotateDisc 10s  infinite linear;
     overflow: hidden;
 }

@@ -1,24 +1,62 @@
-//HeartCursor
-document.addEventListener('mousemove', function(e) {
-    let body = document.querySelector('body');
-    let heart = document.createElement('span');
-
-    let x = e.offsetX;
-    let y = e.offsetY;
-
-    heart.style.left = x + 'px';
-    heart.style.top = y + 'px';
-
-    let size = Math.random() * 80;
-    heart.style.width = 20 + size + 'px';
-    heart.style.height = 20 + size + 'px';
-
-    let transformValue = Math.random() * 360;
-    heart.style.transform = 'rotate('+ transformValue +'deg)';
-
-    body.appendChild(heart);
-
-    setTimeout(function() {
-        heart.remove();
-    }, 1000)
-})
+//Create Heart
+function createHeart() {
+    const heart = document.createElement('span');
+  
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+  
+    const size = Math.random() * 20 + 30; // 30px to 50px
+    heart.style.width = `${size}px`;
+    heart.style.height = `${size}px`;
+  
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+  
+    document.body.appendChild(heart);
+  
+    const randomX = (Math.random() - 0.5) * 400; // Random x-axis movement (-200 to 200px)
+    const randomY = (Math.random() - 0.5) * 400; // Random y-axis movement (-200 to 200px)
+    const rotation = Math.random() * 360; // Random rotation
+  
+    heart.style.animation = `moveAndRotate 2s ease-out`;
+    heart.style.setProperty('--move-x', `${randomX}px`);
+    heart.style.setProperty('--move-y', `${randomY}px`);
+    heart.style.setProperty('--rotate', `${rotation}deg`);
+  
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
+  }
+  
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes moveAndRotate {
+      0% {
+        transform: translate(0, 0) rotate(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--move-x), var(--move-y)) rotate(var(--rotate));
+        opacity: 0; /* Fade out for smooth removal */
+      }
+    }
+  
+    span {
+      position: absolute;
+      pointer-events: none;
+      filter: drop-shadow(0 0 15px rgba(80, 73, 73, 0.5));
+    }
+  
+    span::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('heart.png') no-repeat center;
+      background-size: cover;
+    }
+  `;
+  document.head.appendChild(style);
+  
+  setInterval(createHeart, 300); 
+  
