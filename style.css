@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
 /* Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Caveat */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
 *{
     margin: 0;
@@ -58,7 +60,7 @@ span::before {
 p {
     text-align: center;
     color: #cea6a6;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Poppins', serif;
 }
 
@@ -94,8 +96,6 @@ h1 {
     z-index: 2;
     animation: movePhoto1 2.5s linear forwards;
 }
-
-
 
 .two {
     width: 180px;
@@ -174,6 +174,50 @@ h1 {
         left: 20%;
     }
 }
+
+/* ----------------- MESSAGE --------------- */
+
+.direction {
+    /* border: 1px solid yellow; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    top: 70%;
+    left:0%;
+    /* transform: translate(-50%, 108000%); */
+    z-index: 10;
+}
+
+.direction p {
+    font-family: 'Caveat', serif;
+    font-size: 28px;
+    text-shadow: 2px 2px 3px #27070d;
+    line-height: 0;
+    text-align: center;
+    text-shadow: 0 0 1px #fff,
+                 0 0 5px #fff,
+                 0 0 10px #ff0000,
+                 0 0 20px #ff0000;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 5px #fff,
+                     0 0 10px #fff,
+                     0 0 20px #ff0000,
+                     0 0 30px #ff0000;
+    }
+    50% {
+        text-shadow: 0 0 10px #fff,
+                     0 0 10px #ff0000,
+                     0 0 30px #ff0000,
+                     0 0 50px #ff0000;
+    }
+}
+
 
 /* -------------- VINLY --------------- */
 

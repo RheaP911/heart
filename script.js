@@ -60,3 +60,4 @@ function createHeart() {
   
   setInterval(createHeart, 300); 
   
+  //Starts playing music
