@@ -73,7 +73,7 @@ h1 {
     background: linear-gradient(90deg, #fefcfb, #f9e4c8, #f0d2b3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: moveDown 1s linear forwards;
+    animation: scaleDown 1s linear forwards;
 }
 
 @keyframes moveDown {
@@ -82,6 +82,14 @@ h1 {
     }
 }
 
+
+@keyframes scaleDown {
+    0% {
+        /* transform: translateX(-400%); */
+        transform: scale(4);
+        opacity: 0.01;
+    }
+}
 
 /* ----------------- CONTAINER -------------- */
 
