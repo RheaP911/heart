@@ -62,6 +62,7 @@ p {
     color: #cea6a6;
     font-size: 18px;
     font-family: 'Poppins', serif;
+    animation: moveDown 1s linear forwards;
 }
 
 h1 {
@@ -72,7 +73,15 @@ h1 {
     background: linear-gradient(90deg, #fefcfb, #f9e4c8, #f0d2b3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: moveDown 1s linear forwards;
 }
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-400%);
+    }
+}
+
 
 /* ----------------- CONTAINER -------------- */
 
@@ -200,7 +209,8 @@ h1 {
                  0 0 5px #fff,
                  0 0 10px #ff0000,
                  0 0 20px #ff0000;
-    animation: pulse 1.5s infinite alternate;
+    animation: pulse 1.5s infinite alternate 3s,
+               fade 4s linear forwards ;
 }
 
 @keyframes pulse {
@@ -209,15 +219,25 @@ h1 {
                      0 0 10px #fff,
                      0 0 20px #ff0000,
                      0 0 30px #ff0000;
+        transform: scale(1);
     }
     50% {
         text-shadow: 0 0 10px #fff,
                      0 0 10px #ff0000,
                      0 0 30px #ff0000,
                      0 0 50px #ff0000;
+        transform: scale(1.1);
     }
 }
 
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 /* -------------- VINLY --------------- */
 
@@ -232,7 +252,7 @@ h1 {
     background-image: repeating-radial-gradient(#181312, #181312 10%, #2c2424 15%);
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.52),
                 0 4px 8px 0 rgba(0, 0, 0, 0.41);
-    animation: rotateDisc 10s  infinite linear;
+    animation: rotateDisc 10s  infinite linear, moveUpDisc 1.5s linear forwards;
     overflow: hidden;
 }
 
@@ -277,5 +297,11 @@ h1 {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes moveUpDisc {
+    0% {
+        transform: translateY(50%);
     }
 }
