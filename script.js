@@ -60,4 +60,21 @@ function createHeart() {
   
   setInterval(createHeart, 300); 
   
-  //Starts playing music
+//Reveal Message
+let promptMessage = document.getElementById('promptMessage');
+let overlay = document.getElementById('overlay');
+let message = document.querySelector('.envelope-container');
+
+promptMessage.addEventListener("click", function () {
+    overlay.style.visibility = "visible"; 
+    overlay.style.opacity = "1";
+
+    message.style.display = "grid";
+});
+
+//Open envelope
+const envelope = document.querySelector('.envelope-wrapper');
+
+envelope.addEventListener('click', () => {
+    envelope.classList.toggle('flap');
+});

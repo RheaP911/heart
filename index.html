@@ -7,24 +7,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>To my dearest,</p>
-    <h1>Happy Valentine's Day</h1>
-    <audio  autoplay loop>
-        <source src="With You - Belle Mariano (Performance Video).mp3" type="audio/mpeg">
-        <source src="With You - Belle Mariano (Performance Video).wav" type="audio/wav">
-    </audio>
-    <div class="container">
-        <div class="card one"></div>
-        <div class="card two"></div>
-        <div class="card three"></div>
-        <div class="card four"></div>
+    <div class="page-wrapper">
+        <div class="overlay" id="overlay"></div>
+        <div class="container">
+            <p>To my dearest,</p>
+            <h1>Happy Valentine's Day</h1>
+            <audio autoplay loop>
+                <source src="With You - Belle Mariano (Performance Video).mp3" type="audio/mpeg">
+                <source src="With You - Belle Mariano (Performance Video).wav" type="audio/wav">
+            </audio>
+            <div class="photo-container">
+                <div class="card one"></div>
+                <div class="card two"></div>
+                <div class="card three"></div>
+                <div class="card four"></div>
+            </div>
+            <div class="promptMessage" id="promptMessage">
+                <p>Click if you want to smile!</p>
+            </div>
+            <div class="vinyl">
+                <div class="circle"></div>
+            </div>
+        </div>
     </div>
-    <div class="direction">
-        <p>Catch my heart</p>
+    <div class="envelope-container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Dear Person.</strong>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Numquam labore omnis minus maiores laboriosam, facere in beatae esse. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div> 
     </div>
-    <div class="vinyl">
-        <div class="circle"></div>
-    </div>
+       
+    
     <script src="script.js"></script>
 </body>
 </html>
