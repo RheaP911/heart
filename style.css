@@ -378,6 +378,7 @@ span::before {
   }
   
   .envelope-container > .envelope-wrapper {
+    
     background: var(--bg-envelope-color);
     box-shadow: 0 0 40px var(--shadow-color);
   }
@@ -430,7 +431,7 @@ span::before {
   }
   .heart {
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     width: 15px;
     height: 15px;
@@ -490,7 +491,11 @@ span::before {
     transition-delay: 0.4s;
   }
 
-.letter .text {
+  .envelope-wrapper {
+    margin-top: -10rem;
+  }
+
+.text {
     width: 100%;
     height: 100%;
     display: flex;
@@ -498,22 +503,25 @@ span::before {
     justify-content: center;
     align-items: center;
     line-height: 1.5rem;
+    color: var(--txt-color);
+    transform: scale(2);
+    z-index: 300;
 }
 
-.letter .text .happy-text {
+.text .happy-text {
     font-size: 0.9rem;
     letter-spacing: 0.25rem;
     font-weight: 500;
     text-transform: uppercase;
 }
 
-.letter .text .valentine-text {
+.text .valentine-text {
     font-size: 1.8rem;
     font-family: 'BobaMilk', serif;
     padding: 0.3rem 0;
 }
 
-.letter .text .day-text {
+.text .day-text {
     font-size: 1.5rem;
     font-weight: 500;
     font-family: 'BobaMilk', serif;
