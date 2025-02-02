@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Caveat */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@font-face { font-family: BobaMilk; src: url('BobaMilk.ttf'); } 
+
 
 *{
     margin: 0;
@@ -31,7 +33,7 @@ span {
     pointer-events: none;
     filter: drop-shadow(0 0 15px rgba(80, 73, 73, 0.5));
     animation: fadeInOut 1s linear infinite;
-    z-index: 1000;
+    z-index: 100;
 }
 
 @keyframes fadeInOut {
@@ -69,7 +71,7 @@ span::before {
 
 .overlay {
     position: absolute;
-    top: 0;
+    top: -5%;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -78,7 +80,7 @@ span::before {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    z-index: 100;
+    z-index: 105;
 }
 
 
@@ -112,7 +114,6 @@ span::before {
 
 @keyframes scaleDown {
     0% {
-        /* transform: translateX(-400%); */
         transform: scale(4);
         opacity: 0.01;
     }
@@ -121,7 +122,6 @@ span::before {
 /* ----------------- PHOTO CONTAINER -------------- */
 
 .card {
-    /* background: #fefefe; */
     border: 6px solid #dcdcdc;
     border-top-width: 12px;
     border-bottom-width: 25px;
@@ -221,7 +221,7 @@ span::before {
 
 /* ----------------- MESSAGE --------------- */
 
-.promptMessage {/* border: 1px solid yellow; */
+.promptMessage {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -229,7 +229,6 @@ span::before {
     position: fixed;
     top: 70%;
     left:0%;
-    /* transform: translate(-50%, 108000%); */
     z-index: 10;
     cursor: pointer;
 }
@@ -354,8 +353,17 @@ span::before {
     place-items: center;
     background-color: transparent;
     transform: scale(0.9);
-    z-index: 2000;
-    animation: all 0.7s ease-in-out;
+    z-index: 200;
+    animation: zoomOut 0.7s ease-in-out;
+}
+
+@keyframes zoomOut {
+    0%{
+        transform: scale(0.2);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
 :root{
@@ -365,7 +373,7 @@ span::before {
     --envelope-tab: #f8eded;
     --envelope-cover: #ffd9d9;
     --shadow-color: rgba(0, 0, 0, 0.2);
-    --txt-color: #ebebeb;
+    --txt-color: #fff;
     --heart-color: rgb(252, 8, 231);
   }
   
@@ -382,7 +390,7 @@ span::before {
     content: "";
     position: absolute;
     top: 0;
-    z-index: 2;
+    z-index: 201;
     border-top: 130px solid var(--envelope-tab);
     border-right: 150px solid transparent;
     border-left: 150px solid transparent;
@@ -392,7 +400,7 @@ span::before {
   .envelope-wrapper > .envelope::after {
     content: "";
     position: absolute;
-    z-index: 2;
+    z-index: 202;
     width: 0px;
     height: 0px;
     border-top: 130px solid transparent;
@@ -402,7 +410,7 @@ span::before {
   }
   .envelope > .letter {
     position: absolute;
-    right: 20%;
+    right: 22%;
     bottom: 0;
     width: 54%;
     height: 80%;
@@ -427,7 +435,7 @@ span::before {
     width: 15px;
     height: 15px;
     background: var(--heart-color);
-    z-index: 4;
+    z-index: 204;
     transform: translate(-50%, -20%) rotate(45deg);
     transition: transform 0.5s ease-in-out 1s;
     box-shadow: 0 1px 6px var(--shadow-color);
@@ -456,8 +464,57 @@ span::before {
     bottom: 100px;
     transform: scale(1.5);
     transition-delay: 1s;
-  }
+    animation: moveUpDown 2s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes moveUpDown {
+    0% {
+        bottom: 100px;
+        transform: scale(1.5);
+    }
+    50% {
+        bottom: 260px; 
+        transform: scale(1.6);
+    }
+    100% {
+        right: 70px;
+        bottom: 130px;
+        transform: scale(1.5);
+        z-index: 206;
+    }
+}
+
   .flap > .heart {
     transform: rotate(90deg);
     transition-delay: 0.4s;
   }
+
+.letter .text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5rem;
+}
+
+.letter .text .happy-text {
+    font-size: 0.9rem;
+    letter-spacing: 0.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.letter .text .valentine-text {
+    font-size: 1.8rem;
+    font-family: 'BobaMilk', serif;
+    padding: 0.3rem 0;
+}
+
+.letter .text .day-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'BobaMilk', serif;
+}
