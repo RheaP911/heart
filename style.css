@@ -696,6 +696,7 @@ span::before {
     border-radius: 25px;
     /* display: none; */
     opacity: 0;
+    font-family: 'Poppins', serif;
     /* animation: float 2s ease-in-out; */
     cursor: pointer;
 }
