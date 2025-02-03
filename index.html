@@ -7,12 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="landing-page">
+        <div class="landing-photo">
+            <img src="disc-photo.jpg" width="250em" alt="">
+            <p>06/20/2001</p>
+        </div>
+        <p class="landing-ask">Mahal, wanna know what song reminds me of you?</p>
+        <div class="buttons">
+            <button class="yes-btn">Yes</button>
+            <p>or</p>
+            <button class="no-btn">No</button>
+            <p class="feedback"></p>
+        </div>
+    </div>
     <div class="page-wrapper">
         <div class="overlay" id="overlay"></div>
         <div class="container">
-            <p>To my dearest,</p>
-            <h1>Happy Valentine's Day</h1>
-            <audio autoplay loop>
+            <p id="first-line">To my dearest,</p>
+            <h1 id="second-line">Happy Valentine's Day</h1>
+            <audio loop id="background-music">
                 <source src="With You - Belle Mariano (Performance Video).mp3" type="audio/mpeg">
                 <source src="With You - Belle Mariano (Performance Video).wav" type="audio/wav">
             </audio>
@@ -23,7 +36,7 @@
                 <div class="card four"></div>
             </div>
             <div class="promptMessage" id="promptMessage">
-                <p>Click if you want to smile!</p>
+                <p id="prompt">Click if you want to smile!</p>
             </div>
             <div class="vinyl">
                 <div class="circle"></div>
@@ -39,11 +52,17 @@
         <div class="envelope-wrapper">
             <div class="envelope">
                 <div class="letter">
-                    
+                    <div class="message">
+                        <p>I’m so grateful for you and all the 
+                            happiness you bring into my life. I love you endlessly.
+                        </p>
+                        <p class="right-text">- Jane</p>
+                    </div>
                 </div>
             </div>
             <div class="heart"></div>
         </div> 
+        <button class="exit-btn">Our photos 📸💖👉</button>
     </div>
        
     
