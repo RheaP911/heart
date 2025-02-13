@@ -1,63 +1,3 @@
-//No Button
-const feedbackMessages = [
-  "Choose again 😜",
-  "Not quite! Try again 🤔",
-  "Again. 🙂",
-  "You're testing my patience... 😤",
-  "...............",
-  "Oh, yeah?🙃",
-];
-
-const finalMessage = "There we go.";
-
-const noBtn = document.querySelector(".no-btn");
-const feedback = document.querySelector(".feedback");
-
-let clickCount = 0;
-
-noBtn.addEventListener("click", function() {
-  if (clickCount < feedbackMessages.length) {
-    feedback.textContent = feedbackMessages[clickCount];
-    feedback.classList.add("show");
-    clickCount++;
-  }
-
-  if (clickCount === feedbackMessages.length) {
-    noBtn.style.display = "none"; // Hide the No button
-    feedback.textContent = finalMessage; // Show final feedback
-  }
-});
-
-// Start music
-let landingPage = document.querySelector('.landing-page');
-let firstLine = document.querySelector('#first-line');
-let secondLine = document.querySelector('#second-line');
-let photoOne = document.querySelector('.one');
-let photoTwo = document.querySelector('.two');
-let photoThree = document.querySelector('.three');
-let photoFour = document.querySelector('.four');
-let song = document.querySelector('audio');
-let promptM = document.querySelector('#prompt');
-
-document.querySelector(".yes-btn").addEventListener("click", function() {
-  landingPage.style.display = "none";
-
-  if (song.paused) {
-    song.play(); // Play the song
-  }
-
-  firstLine.style.animation = "moveDown 1s linear forwards";
-  secondLine.style.animation = "scaleDown 1s linear forwards";
-  photoOne.style.animation = "movePhoto1 2.5s linear forwards";
-  photoTwo.style.animation = "movePhoto2 2s linear forwards";
-  photoThree.style.animation = "movePhoto3 1s linear forwards";
-  photoFour.style.animation = "movePhoto4 1.5s linear forwards";
-  promptM.style.animation = "pulse 1.5s infinite alternate 3s, fade 4s linear forwards";
-
-});
-
-
-
 //Create Heart
 function createHeart() {
     const heart = document.createElement('span');
@@ -65,7 +5,7 @@ function createHeart() {
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
   
-    const size = Math.random() * 20 + 30; 
+    const size = Math.random() * 20 + 30; // 30px to 50px
     heart.style.width = `${size}px`;
     heart.style.height = `${size}px`;
   
@@ -74,9 +14,9 @@ function createHeart() {
   
     document.body.appendChild(heart);
   
-    const randomX = (Math.random() - 0.5) * 400; 
-    const randomY = (Math.random() - 0.5) * 400; 
-    const rotation = Math.random() * 360; 
+    const randomX = (Math.random() - 0.5) * 400; // Random x-axis movement (-200 to 200px)
+    const randomY = (Math.random() - 0.5) * 400; // Random y-axis movement (-200 to 200px)
+    const rotation = Math.random() * 360; // Random rotation
   
     heart.style.animation = `moveAndRotate 2s ease-out`;
     heart.style.setProperty('--move-x', `${randomX}px`);
@@ -154,14 +94,19 @@ envelopeWrapper.addEventListener('animationend', () => {
   }, 3200)
 })
 
-// Go back to main page
+// Go back to landing page
+// exitBtn.addEventListener('clicked', () => {
+
+// )}
 let envelopeContainer = document.querySelector('.envelope-container');
 let overLay =document.querySelector("#overlay"); 
 
 exitBtn.addEventListener('click', () => {
   envelopeWrapper.classList.remove('flap');
 
+  // Add fade-out effect
   envelopeContainer.style.transition = 'opacity 0.5s ease-out';
+  // envelopeContainer.style.opacity = '0';
   envelopeContainer.style.display = "none";
 
   overLay.style.transition = 'opacity 0.5s ease-out';
@@ -170,8 +115,30 @@ exitBtn.addEventListener('click', () => {
 
 
 
+  // Hide the envelope container after the fade-out effect
   setTimeout(() => {
       envelopeContainer.style.display = 'none';
       overLay.style.display = 'none';
-  }, 700);
+  }, 700); // After 0.5 seconds (same as fade-out duration)
 });
+
+
+// Select all the cards
+const cards = document.querySelectorAll('.card');
+
+// Loop through each card and add a click event listener
+// cards.forEach(card => {
+//     card.addEventListener('click', () => {
+//         cards.forEach(c => {
+//             c.classList.remove('expanded');
+//             c.classList.remove('opaque');
+//         });
+
+//         card.classList.add('expanded');
+//         cards.forEach(c => {
+//             if (c !== card) {
+//                 c.classList.add('opaque');
+//             }
+//         });
+//     });
+// });

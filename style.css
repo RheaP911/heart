@@ -83,106 +83,6 @@ span::before {
     z-index: 105;
 }
 
-/* ----------- LANDING PAGE ------------------- */
-
-.landing-page {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 2rem;
-    background: url(disc-photo.jpg) center;
-    background-size: cover;
-    /* border: 1px solid yellow; */
-    z-index: 1000;
-}
-
-.landing-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-  }
-
-.landing-photo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    padding: 20px 10px;
-    width: auto;
-    height: auto;
-    margin-bottom: 2rem;
-    z-index: 2000;
-}
-
-.landing-photo p {
-    margin-top: 20px;
-    font-family: 'Playwrite IN', serif;
-    font-size: 0.7rem;
-    letter-spacing: 6px;
-    color: #171717;
-    z-index: 2000;
-
-}
-
-.landing-ask {
-    color: var(--txt-color); 
-    font-family: 'Poppins', serif; 
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    z-index: 2000;
-
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    z-index: 2000;
-
-}
-
-.buttons button {
-    padding: 18px 32px;
-    border: 1px solid var(--letter);
-    border-radius: 25px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--txt-color);
-    cursor: pointer;
-}
-
-.yes-btn {
-    width: 75%;
-    background: var(--letter);
-    animation: pulse 1s infinite alternate;
-}
-
-.no-btn {
-    background: #171717;
-    width: 60%;
-}
-
-.feedback {
-    margin-top: 1rem;
-    color: rgb(219, 139, 139);
-    font-size: 1rem;
-    text-align: center;
-    font-family: 'Poppins', serif;
-}
 
 /* ----------- GREETINGS ----------------- */
 
@@ -191,7 +91,7 @@ span::before {
     color: #cea6a6;
     font-size: 18px;
     font-family: 'Poppins', serif;
-    /* animation: moveDown 1s linear forwards; */
+    animation: moveDown 1s linear forwards;
 }
 
 .container h1 {
@@ -202,7 +102,7 @@ span::before {
     background: linear-gradient(90deg, #fefcfb, #f9e4c8, #f0d2b3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* animation: scaleDown 1s linear forwards; */
+    animation: scaleDown 1s linear forwards;
 }
 
 @keyframes moveDown {
@@ -238,7 +138,7 @@ span::before {
     background: url(photo-1.jpg);
     background-size: cover;
     z-index: 2;
-    /* animation: movePhoto1 2.5s linear forwards; */
+    animation: movePhoto1 2.5s linear forwards;
 }
 
 .two {
@@ -248,8 +148,9 @@ span::before {
     left: 10%;
     background: url(photo-2.jpg);
     background-size: cover;
+    background-position-y: 25% ;
     z-index: 1;
-    /* animation: movePhoto2 2s linear forwards; */
+    animation: movePhoto2 2s linear forwards;
 }
 
 .three {
@@ -259,7 +160,8 @@ span::before {
     left: -105%;
     background: url(photo-3.jpg);
     background-size: cover;
-    /* animation: movePhoto3 1s linear forwards; */
+    background-position: center;
+    animation: movePhoto3 1s linear forwards;
 }
 
 .four {
@@ -269,7 +171,8 @@ span::before {
     left: 12%;
     background: url(photo-4.jpg);
     background-size: cover;
-    /* animation: movePhoto4 1.5s linear forwards; */
+    background-position-y: 65%;
+    animation: movePhoto4 1.5s linear forwards;
 }
 
 .card {
@@ -325,7 +228,7 @@ span::before {
         left: -105%;
     }
     100% {
-        top: 25%;
+        top: 28%;
         left: 12%;
     }
 }
@@ -337,7 +240,7 @@ span::before {
         left: -105%;
     }
     100% {
-        top: 45%;
+        top: 48%;
         left: 20%;
     }
 }
@@ -366,8 +269,8 @@ span::before {
                  0 0 5px #fff,
                  0 0 10px #ff0000,
                  0 0 20px #ff0000;
-    /* animation: pulse 1.5s infinite alternate 3s,
-               fade 4s linear forwards ; */
+    animation: pulse 1.5s infinite alternate 3s,
+               fade 4s linear forwards ;
 }
 
 @keyframes pulse {
@@ -440,7 +343,7 @@ span::before {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: url(disc-photo.jpg);
+    background: url(disc-photo.png);
     background-size: cover;
     z-index: 1;
 }
@@ -462,7 +365,6 @@ span::before {
         transform: translateY(50%);
     }
 }
-
 
 /* ----------- ENVELOPE -------------------- */
  
@@ -544,7 +446,7 @@ span::before {
     text-align: center;
     transition: all 1s ease-in-out;
     box-shadow: 0 0 5px var(--shadow-color);
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
   
   .envelope > .letter > .text {
@@ -653,7 +555,7 @@ span::before {
 .text .valentine-text {
     font-size: 1.8rem;
     font-family: 'BobaMilk', serif;
-    padding: 0.3rem 0;
+    /* padding: 0.1rem 0; */
 }
 
 .text .day-text {
@@ -663,7 +565,7 @@ span::before {
 }
 
 .letter {
-    padding-top: 5rem;
+    /* padding-top: 5rem; */
 }
 
 .letter .message {
@@ -680,7 +582,7 @@ span::before {
 
 .right-text {
     margin-top: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
     /* font-family: 'BobaMilk', serif; */
     font-family: 'Playwrite IN', serif;
@@ -696,7 +598,6 @@ span::before {
     border-radius: 25px;
     /* display: none; */
     opacity: 0;
-    font-family: 'Poppins', serif;
     /* animation: float 2s ease-in-out; */
     cursor: pointer;
 }
@@ -726,3 +627,10 @@ span::before {
         transform: translateY(0);
     }
 } */
+
+#prompt,
+#promptMessage {
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
